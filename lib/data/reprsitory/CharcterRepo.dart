@@ -1,17 +1,15 @@
 
 
+import '../model/charcters.dart';
 import '../webservices/CharcterWebService.dart';
 
 class CharcterRepo{
  final  CharctersApi charctersapi;
 
-  CharcterRepo(this.charctersapi);
+  CharcterRepo({required this.charctersapi});
 
- Future<List<dynamic>> getallCharcters() async{
+ Future<List<Charecters>> getallCharcters() async{
    final charcters = await charctersapi.getallCharcters();
-   return charcters.map((charcter) => charcter.fromJson(charcter)).toList();
+   return charcters.map((charcter) => Charecters.fromJson(charcter)).toList();
  }
-
-
-
 }

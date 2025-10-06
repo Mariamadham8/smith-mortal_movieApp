@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import'package:flutter/material.dart';
 
 import '../../Constants/String.dart';
+import '../model/charcters.dart';
 
 class CharctersApi{
  late Dio dio;
@@ -18,9 +19,9 @@ class CharctersApi{
 
  Future<List<dynamic>> getallCharcters() async{
    try{
-     Response res= await dio.get('characters');
+     Response res= await dio.get('character');
      print(res.data.toString());
-     return res.data;
+     return res.data['results'];
    }
    catch(e){
      print(e.toString());

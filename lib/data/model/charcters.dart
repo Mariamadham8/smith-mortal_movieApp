@@ -13,8 +13,6 @@ class Charecters{
     status=json['status'];
     seasons1=json['episode'];
 
-
-
   }
 
 
